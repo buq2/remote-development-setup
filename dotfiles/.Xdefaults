@@ -1,0 +1,87 @@
+XTerm*metaSendsEscape: true
+XTerm*eightBitInput: false
+
+# Some times faking the name of the ter is good idea
+# rxvt*termName: xterm-256color
+# Arch package rxvt-unicode-terminfo has the terminfo for urxvt for those
+# who would like to transfer the file to server for example
+urxvt*termName: rxvt-unicode
+urxvt*scrollBar: false
+urxvt*fading: 30
+urxvt*cursorBlink: true
+urxvt*background: black
+urxvt*foreground: lightgray
+urxvt*keysym.Super_L: \030@
+urxvt*keysym.Super_R: \030@
+urxvt*urlLauncher: opera
+
+# Add tabs
+# Shift+down   = new tab
+# Ctrl+D       = close tab
+# Shift+arrows = change tab
+# Ctrl+arrows  = change tab location
+# Shift+up     = rename tab (When named tabs in use)
+# There is two version, normal tabbed (tabbed)
+# urxvt.perl-ext-common: default,tabbed
+# and named tabs which requires package "urxvt-tabbedex"
+# See: https://github.com/stepb/urxvt-tabbedex
+urxvt.perl-ext-common: default,tabbedex,clipboard
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg:    3
+URxvt.tabbed.tab-bg:    0
+# Following line works with some of the extensions
+# URxvt*autohideTabbar: true
+# Next line works with tabbedex
+URxvt.autohide: True
+
+# Tabbedex keybindings (4-1: Super + Alt ( + Ctrl))
+# Changes Ctrl+Arrows to Super+Alt+(Ctrl)+Arrows
+# https://github.com/Schnouki/dotfiles/blob/master/Xdefaults
+# https://github.com/stepb/urxvt-tabbedex/pull/4
+# https://raw.github.com/Schnouki/urxvt-tabbedex/master/tabbedex
+URxvt.no-tabbedex-keys: yes
+URxvt.keysym.4-1-Down:    perl:tabbedex:new_tab
+URxvt.keysym.4-1-Left:    perl:tabbedex:prev_tab
+URxvt.keysym.4-1-Right:   perl:tabbedex:next_tab
+URxvt.keysym.4-1-Up:      perl:tabbedex:rename_tab
+URxvt.keysym.4-1-C-Left:  perl:tabbedex:move_tab_left
+URxvt.keysym.4-1-C-Right: perl:tabbedex:move_tab_right
+
+#"unbinds" "normal" control+arrows
+# (This actually generates keycodes which are "sent" to the terminal.
+# Generated keycodes are those which are normally generated in xterm:
+# https://bbs.archlinux.org/viewtopic.php?pid=547683#p547683)
+# By unbinding the Ctrl+Arrow -keys we allow them to be used in vim/tmux
+# These unbindings are not needed if you are using modified tabbex
+# which supports 'no-tabbedex-keys' feature.
+# URxvt.keysym.Control-Up:   \033[1;5A
+# URxvt.keysym.Control-Down:    \033[1;5B
+# URxvt.keysym.Control-Left:    \033[1;5D
+# URxvt.keysym.Control-Right:    \033[1;5C
+
+# Change to tango color cheme
+# https://github.com/Schnouki/dotfiles/blob/master/Xdefaults
+URxvt.foreground: #C0C0C0
+URxvt.background: #171717
+URxvt.color0:     #2E3436
+URxvt.color1:     #CC0000
+URxvt.color2:     #4E9A06
+URxvt.color3:     #C4A000
+URxvt.color4:     #3465A4
+URxvt.color5:     #75507B
+URxvt.color6:     #06989A
+URxvt.color7:     #D3D7CF
+URxvt.color8:     #555753
+URxvt.color9:     #EF2929
+URxvt.color10:    #8AE234
+URxvt.color11:    #FCE94F
+URxvt.color12:    #729FCF
+URxvt.color13:    #AD7FA8
+URxvt.color14:    #34E2E2
+URxvt.color15:    #EEEEEC
+
+# Change font
+# Default font also looks really nice
+URxvt.font:        xft:Mono:pixelsize=11:antialias=false
+

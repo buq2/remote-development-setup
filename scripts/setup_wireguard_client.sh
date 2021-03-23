@@ -6,8 +6,8 @@ then
 fi
 
 # Print client config
-source setup_wireguard.sh
-#source setup_ssh.sh #needed for IP
+source scripts/setup_wireguard.sh
+source scripts/setup_ssh.sh #needed for IP
 SERVER_PUBLIC_KEY=`cat ${FILENAME_SERVER_PRIVATE}.pub | tr -d '\n'`
 CLIENT_PRIVATE_KEY=`cat ${FILENAME_CLIENT_PRIVATE} | tr -d '\n'`
 

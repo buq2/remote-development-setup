@@ -5,9 +5,9 @@ then
     exit 1
 fi
 
-source setup_ssh.sh
+source scripts/setup_ssh.sh
 
 # Send configs
-rsync -av dotfiles/.[^.]* ubuntu@$SERVER_IP:/home/ubuntu
+rsync -av to_server/dotfiles/.[^.]* ubuntu@$SERVER_IP:/home/ubuntu
 # Vnc passwd can not have 777 rights or it will be deleted when starting vncserver
 ssh ubuntu@$SERVER_IP chmod 600 /home/ubuntu/.vnc/passwd

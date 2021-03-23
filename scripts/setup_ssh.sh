@@ -11,6 +11,7 @@ if [[ -z "${SSH_AUTH_SOCK}" ]]; then
     ssh-add secrets/id_rsa
 fi
 
+# TODO: We should get server fingerprint some other way
 if ! ssh -o ConnectTimeout=1 ubuntu@$SERVER_IP echo -n 
 then
     echo Finding server ip

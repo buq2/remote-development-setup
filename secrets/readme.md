@@ -11,7 +11,7 @@ aws-access-key-secret.pw - AWS access key secret
 
 Generate with
 ```
-source setup_ssh_keys.sh
+source scripts/setup_ssh_keys.sh
 ```
 
 id_rsa - SSH private key
@@ -22,8 +22,8 @@ id_rsa.pub - SSH public key
 
 Generate these with 
 ```
-source setup_wireguard.sh
-source setup_wireguard_client.sh
+source scripts/setup_wireguard.sh
+source scripts/setup_wireguard_client.sh
 ```
 
 wg_client.key - Wireguard client private key

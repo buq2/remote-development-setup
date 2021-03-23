@@ -1,15 +1,16 @@
 #!/bin/bash
 
-# This script will be run automatically when server is created
+# This script will be run automatically on the server when it is created
 
 export DEBIAN_FRONTEND=noninteractive
 sudo apt update
-sudo apt install -y ufw wireguard
+sudo apt install -y ufw wireguard rsync
 
 sudo ufw allow 22
 sudo ufw allow 1294 # wireguard
 yes | sudo ufw enable
 
+# Note that this sections is modified by setup_wireguard.sh script
 sudo tee -a /etc/wireguard/wg0.conf > /dev/null <<EOT
 [Interface]
 PrivateKey = <redacted>

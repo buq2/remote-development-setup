@@ -1,7 +1,7 @@
 #!/bin/bash
-source setup_ssh.sh
+source scripts/setup_ssh.sh
 
-mkdir salt
+mkdir -p salt
 tee salt/roster > /dev/null <<EOT
 remote-dev:
   host: $SERVER_IP

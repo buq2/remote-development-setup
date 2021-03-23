@@ -33,7 +33,7 @@ resource "aws_instance" "remote-dev-environment" {
   tags = {
     Name = "remote-dev-environment"
   }
-  user_data = file("user_data.sh")
+  user_data = file("to_server/user_data.sh")
   vpc_security_group_ids = [aws_security_group.allow_wireguard.id]
 }
 

@@ -12,4 +12,4 @@ export TF_VAR_region=$AWS_DEFAULT_REGION
 # Find newest ubuntu 20.04 image
 export TF_VAR_ami=`aws ec2 describe-images --owners self amazon 099720109477 --filters "Name=name,Values=*ubuntu*20.04*minimal*" "Name=architecture,Values=x86_64" | jq --raw-output '.Images | sort_by(.CreationDate) | .[-1].ImageId'`
 
-./setup_keys.sh
+./setup_ssh_keys.sh

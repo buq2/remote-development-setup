@@ -8,7 +8,7 @@ fi
 if [[ -z "${SSH_AUTH_SOCK}" ]]; then
     echo Starting ssh-agent
     eval `ssh-agent -s`
-    ssh-add id_rsa
+    ssh-add secrets/id_rsa
 fi
 
 if ! ssh -o ConnectTimeout=1 ubuntu@$SERVER_IP echo -n 

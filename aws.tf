@@ -23,7 +23,7 @@ provider "aws" {
 resource "aws_key_pair" "deployer" {
   key_name   = "remote-dev-environment-deployer-key"
   # Use ~/.ssh/id_rsa.pub if you did not generate the keypair
-  public_key = file("id_rsa.pub")
+  public_key = file("secrets/id_rsa.pub")
 }
 
 resource "aws_instance" "remote-dev-environment" {

@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt update && apt install -y wget unzip curl python3-pip software-properties-common git jq groff rsync
+RUN apt update && apt install -y wget unzip curl python3-pip software-properties-common git jq groff rsync wireguard-tools tigervnc-common
 
 # terraform
 RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -

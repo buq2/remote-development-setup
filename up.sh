@@ -17,3 +17,4 @@ source scripts/setup_wireguard_client.sh
 source scripts/create_salt_roster.sh
 source scripts/send_dotfiles.sh
 source scripts/setup_desktop.sh
+source scripts/s3.sh
